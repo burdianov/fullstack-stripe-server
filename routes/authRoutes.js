@@ -5,6 +5,7 @@ module.exports = (app) => {
     scope: ["profile", "email"]
   }));
   app.get("/auth/google/callback", passport.authenticate("google"));
+
   app.get("/auth/facebook", passport.authenticate("facebook", {
     profileFields: ['id', 'displayName', 'photos', 'email']
   }));
@@ -12,10 +13,13 @@ module.exports = (app) => {
     successRedirect: "/",
     failureRedirect: "/login"
   }));
-  app.get("/api/current_user", (req, res) => {
+
+  app.get("/api/logout", (req, res) => {
+    req.logout();
     res.send(req.user);
   });
-  app.get("/", (req, res) => {
-    res.send("Home Page");
+
+  app.get("/api/current_user", (req, res) => {
+    res.send(req.user);
   });
 };
