@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>It's working</h1>
+      <a href="/auth/google">Sign In with Google</a>
     </div>
   );
 }
