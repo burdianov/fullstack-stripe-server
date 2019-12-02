@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 const Header = ({auth}) => {
   const renderContent = () => {
-    switch(auth) {
+    switch (auth) {
       case null:
         return;
       case false:
@@ -20,7 +21,11 @@ const Header = ({auth}) => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <a className="left brand-logo">Emaily</a>
+        <Link to={auth ? "/surveys" : "/"}
+              className="left brand-logo"
+        >
+          Emaily
+        </Link>
         <ul className="right">
           {renderContent()}
         </ul>
