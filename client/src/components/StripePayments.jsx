@@ -2,7 +2,6 @@ import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 
 const StripePayments = () => {
-  debugger;
   return (
     <StripeCheckout
       amount={500}
