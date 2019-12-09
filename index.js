@@ -11,7 +11,8 @@ mongoose.connect(keys.MONGO_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  });
+  }
+);
 
 const app = express();
 
