@@ -6,10 +6,7 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
-
-const SurveyNew = () => {
-  return <h2>SurveyNew</h2>
-};
+import SurveyNew from "./surveys/SurveyNew";
 
 const App = ({fetchUser}) => {
   useEffect(() => {
