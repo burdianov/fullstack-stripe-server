@@ -1,6 +1,7 @@
 // SurveyForm shows a form for a user to add input
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import {Link} from "react-router-dom";
 import SurveyField from "./SurveyField";
 
 const FIELDS = [
@@ -26,7 +27,14 @@ const SurveyForm = (props) => {
     <div>
       <form onSubmit={props.handleSubmit(values => console.log(values))}>
         {renderFields()}
-        <button type="submit">Submit</button>
+        <Link to="/surveys" className="red btn-flat white-text">
+          Cancel
+        </Link>
+        <button type="submit"
+                className="teal btn-flat right white-text">
+          Next
+          <i className="material-icons right">done</i>
+        </button>
       </form>
     </div>
   )
