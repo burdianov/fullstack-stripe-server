@@ -1,11 +1,12 @@
 // SurveyField contains logic to render a single label and a text input
 import React from "react";
 
-const SurveyField = () => {
+const SurveyField = ({input, label}) => {
   return (
-    <div>
-      <input />
-    </div>
+    <>
+      <label>{label}</label>
+      <input {...input}/>
+    </>
   )
 };
 
