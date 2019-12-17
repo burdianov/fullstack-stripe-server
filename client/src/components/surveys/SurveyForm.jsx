@@ -1,5 +1,6 @@
 // SurveyForm shows a form for a user to add input
 import React from "react";
+import _ from "lodash";
 import {Field, reduxForm} from "redux-form";
 import {Link} from "react-router-dom";
 import SurveyField from "./SurveyField";
@@ -43,8 +44,20 @@ const SurveyForm = (props) => {
 const validate = (values) => {
   const errors = {};
 
+  _.each(FIELDS, ({name}) => {
+    if (!values[name]) {
+      errors[name] = "You must provide a value";
+    }
+  });
+
   if (!values.title) {
     errors.title = "You must provide a title";
+  }
+  if (!values.subject) {
+    errors.subject = "You must provide a subject";
+  }
+  if (!values.body) {
+    errors.body = "You must provide a body";
   }
 
   return errors;
