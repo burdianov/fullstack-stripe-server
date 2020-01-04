@@ -28,5 +28,4 @@ const App = ({fetchUser}) => {
     </div>
   )
 };
-
 export default connect(null, actions)(App);
